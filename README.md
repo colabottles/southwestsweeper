@@ -6,9 +6,6 @@ A modern, responsive website template for green energy companies built with Astr
 
 **[🔗 View Live Demo](https://energy-template.vbartalis.dev/)** - **[Mirror](https://vbartalis.github.io/energy-template/)**
 
-
-
-
 **[🎨 Get Template on Astro](https://astro.build/themes/details/energy-company-template/)**
 
 [![Live Demo](https://img.shields.io/badge/Live-Demo-green?style=for-the-badge)](https://energy-template.vbartalis.dev/)
@@ -17,9 +14,11 @@ A modern, responsive website template for green energy companies built with Astr
 ## 🖼️ Screenshots
 
 ### Light Theme
+
 ![Light Theme Screenshot](./screenshots/Light.png)
 
 ### Dark Theme
+
 ![Dark Theme Screenshot](./screenshots/Dark.png)
 
 ## ✨ Features
@@ -63,14 +62,19 @@ For the best development experience, especially on Windows, clone directly into 
 4. **Enter repository URL**: `https://github.com/vbartalis/energy-template.git`
 5. **Wait for container setup** (automatic dependency installation)
 6. **Start development**
+
    ```bash
    npm run dev
    ```
 
 This approach ensures:
+
 - ✅ Optimal file system performance
+
 - ✅ Fast live reloading on all platforms
+
 - ✅ Pre-configured development environment
+
 - ✅ No local Node.js installation required
 
 ### Option 2: Local Development
@@ -94,7 +98,7 @@ This approach ensures:
    ```bash
    npm install
    ```
-   
+
    *Note: If using Volta, the correct Node.js version will be automatically selected.*
 
 3. **Start development server**
