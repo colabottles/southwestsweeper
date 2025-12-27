@@ -14,7 +14,7 @@ const navItems = [
     text: "Facility Services",
   },
   {
-    href: "#parts-services",
+    href: "#parts-service",
     text: "Parts & Services",
   },
   {
@@ -30,6 +30,10 @@ const navItems = [
     text: "Inventory",
   },
   {
+    href: "#employment",
+    text: "Employment",
+  },
+  {
     href: "#company",
     text: "Company",
   },
@@ -40,14 +44,14 @@ const navItems = [
 ];
 ---
 
-<header class="absolute inset-x-0 top-0 z-50 py-6 px-6">
+<header class="absolute inset-x-0 top-0 z-50 py-2 px-6">
   <!-- <Container> -->
-  <nav class="w-full flex justify-between gap-6 relative">
+  <nav class="w-full h-full flex justify-between gap-6 relative ">
     <!-- logo -->
     <div class="min-w-max inline-flex relative">
       <!-- LOGO -->
       <a href="/" class="relative flex items-center gap-3">
-        <div class="relative h-7 overflow-hidden flex rounded-xl">
+        <div class="relative h-20 size-full overflow-hidden flex rounded-xl">
           <img
             src="./src/images/swsweep.png"
             alt="logo"
@@ -82,7 +86,7 @@ const navItems = [
       >
         <BtnLink
           text="Call Us"
-          href="#cta"
+          href="tel:6026780496"
           className="flex justify-center w-full sm:w-max text-lg text-heading-2"
           variant="cta"
         />

@@ -3,8 +3,8 @@ import Container from "../../shared/Container.astro";
 import GradientText from "../../shared/GradientText.astro";
 import SubTitle2 from "../../shared/SubTitle2.astro";
 import Title2 from "../../shared/Title2.astro";
-import Testimonial from "./components/Testimonial.astro";
-import { testimonialsSection } from "./data.ts";
+import Inventory from "./components/Inventory.astro";
+import { inventorySection } from "./data.ts";
 
 export interface Props {
   className?: string;
@@ -13,14 +13,14 @@ export interface Props {
 const { className } = Astro.props;
 ---
 
-<section id="testimonials" class=`${className}`>
+<section id="inventory" class=`${className}`>
   <Container
     className="mx-auto flex flex-col items-center justify-center text-center"
   >
-    <Title2>{testimonialsSection.title}</Title2>
+    <Title2>{inventorySection.title}</Title2>
     <SubTitle2>
-      <GradientText> {testimonialsSection.subheading1_1}</GradientText><br />
-      {testimonialsSection.subheading1_2}
+      <GradientText> {inventorySection.subheading1_1}</GradientText><br />
+      {inventorySection.subheading1_2}
     </SubTitle2>
   </Container>
   <Container className="flex flex-col items-center">
@@ -28,13 +28,13 @@ const { className } = Astro.props;
       class="mt-8 flex flex-col gap-8 midmd:flex-row text-heading-3 font-medium"
     >
       {
-        testimonialsSection.testimonials.map((testimonial) => {
+        inventorySection.inventory.map((inventory) => {
           return (
-            <Testimonial
-              name={testimonial.name}
-              visual={testimonial.visual}
-              occupation={testimonial.occupation}
-              quote={testimonial.quote}
+            <Inventory
+              name={inventory.name}
+              visual={inventory.visual}
+              occupation={inventory.occupation}
+              quote={inventory.quote}
             />
           );
         })

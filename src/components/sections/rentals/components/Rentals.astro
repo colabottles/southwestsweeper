@@ -9,11 +9,11 @@ import LazyImage from "../../../shared/LazyImage.astro";
 export interface Props {
   title: string;
   description: string;
-  location: string;
+  source: string;
   visual: ImageMetadata;
 }
 
-const { title, description, location, visual } = Astro.props;
+const { title, description, source, visual } = Astro.props;
 ---
 
 <div
@@ -39,7 +39,7 @@ const { title, description, location, visual } = Astro.props;
     <p
       class="absolute top-0 end-0 m-3 start-end text-sm text-primary-900/50 dark:text-primary/70 font-semibold"
     >
-      {location}
+      {source}
     </p>
     <svg
       class="absolute bottom-[-1px] start-0 fill-base dark:fill-base-dark-800"

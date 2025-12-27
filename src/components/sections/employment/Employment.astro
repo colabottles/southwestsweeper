@@ -5,7 +5,7 @@ import SubTitle2 from "../../shared/SubTitle2.astro";
 import Title2 from "../../shared/Title2.astro";
 import EmailForm from "./components/EmailForm.astro";
 import InvolvementCard from "./components/InvolvementCard.astro";
-import { getInvolvedSection } from "./data.ts";
+import { employmentSection } from "./data.ts";
 
 export interface Props {
   className?: string;
@@ -13,25 +13,25 @@ export interface Props {
 const { className } = Astro.props;
 ---
 
-<section id="cta" class=`${className}`>
+<section id="employment" class=`${className}`>
   <Container
     className="mx-auto flex flex-col items-center justify-center text-center"
   >
-    <Title2>{getInvolvedSection.title}</Title2>
+    <Title2>{employmentSection.title}</Title2>
     <SubTitle2>
-      <GradientText>{getInvolvedSection.subheading1_1}</GradientText>
-      {getInvolvedSection.subheading1_2}
+      <GradientText>{employmentSection.subheading1_1}</GradientText>
+      {employmentSection.subheading1_2}
     </SubTitle2>
   </Container>
-  <Container className="space-y-10 md:sapce-y-12">
+  <Container className="space-y-10 md:space-y-12">
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
       {
-        getInvolvedSection.initiatives.map((initiative) => {
+        employmentSection.employment.map((employment) => {
           return (
             <InvolvementCard
-              title={initiative.title}
-              description={initiative.description}
-              visual={initiative.visual}
+              title={employment.title}
+              description={employment.description}
+              visual={employment.visual}
             />
           );
         })

@@ -2,11 +2,11 @@ import img1 from "./assets/person1.png";
 import img2 from "./assets/person2.png";
 import img3 from "./assets/person3.png";
 
-export const testimonialsSection = {
-  title: "What Our Customers Say",
-  subheading1_1: "Hear from Those",
-  subheading1_2: " Who Have Employed Our Services",
-  testimonials: [
+export const inventorySection = {
+  title: "What We Carry",
+  subheading1_1: "Our Wide Selection",
+  subheading1_2: " Of What We Carry In Our Inventory",
+  inventory: [
     {
       name: "Emily Johnson",
       visual: img1,

@@ -3,11 +3,11 @@ import svg2 from "./assets/green-2.svg?raw";
 import svg3 from "./assets/green-3.svg?raw";
 import svg4 from "./assets/green-4.svg?raw";
 
-export const getInvolvedSection = {
+export const employmentSection = {
   title: "Employment Opportunities",
   subheading1_1: "Join Us ",
   subheading1_2: "as an Employee at Southwest Sweeper Sales",
-  initiatives: [
+  employment: [
     {
       title: "Day Porter",
       description:

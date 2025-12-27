@@ -1,9 +1,9 @@
 import img1 from "./assets/solar3.png";
 import img2 from "./assets/wind.png";
-// TODO
+
 import img3 from "./assets/hydro.png";
 import img4 from "./assets/storage.png";
-// TODO
+
 import img5 from "./assets/smart-grid.png";
 import img6 from "./assets/green.png";
 

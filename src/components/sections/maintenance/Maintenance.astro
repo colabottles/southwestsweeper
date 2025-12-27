@@ -6,7 +6,7 @@ import LazyImage from "../../shared/LazyImage.astro";
 import Paragraph from "../../shared/Paragraph.astro";
 import SubTitle2 from "../../shared/SubTitle2.astro";
 import Title2 from "../../shared/Title2.astro";
-import { environmentalImpactSection } from "./data.ts";
+import { maintenanceSection } from "./data.ts";
 
 export interface Props {
   className?: string;
@@ -15,9 +15,9 @@ export interface Props {
 const { className } = Astro.props;
 ---
 
-<section id="environment" class=`${className}`>
+<section id="maintenance" class=`${className}`>
   <Container>
-    <Title2>{environmentalImpactSection.title}</Title2>
+    <Title2>{maintenanceSection.title}</Title2>
   </Container>
   <Container className="flex flex-col midmd:flex-row gap-10 lg:gap-12 ">
     <!-- <div
@@ -27,15 +27,15 @@ const { className } = Astro.props;
       class="max-w-md mr-auto w-11/12 flex-1 flex midmd:w-7/12 lg:w-1/2 flex-col"
     >
       <SubTitle2>
-        {environmentalImpactSection.subheading1_1}
-        <GradientText>{environmentalImpactSection.subheading1_2}</GradientText>
+        {maintenanceSection.subheading1_1}
+        <GradientText>{maintenanceSection.subheading1_2}</GradientText>
       </SubTitle2>
       <Paragraph>
-        {environmentalImpactSection.description}
+        {maintenanceSection.description}
       </Paragraph>
       <ul class="mt-8 space-y-4 text-heading-3">
         {
-          environmentalImpactSection.impactPoints.map((point) => (
+          maintenanceSection.impactPoints.map((point) => (
             <li>
               <Paragraph className="font-normal">
                 <span class="font-bold bg-box-bg rounded-full w-8 h-8 mr-3 text-primary inline-flex justify-center items-center">
@@ -48,7 +48,7 @@ const { className } = Astro.props;
         }
       </ul>
       <div class="pt-10">
-        <CtaButton>{environmentalImpactSection.button}</CtaButton>
+        <CtaButton>{maintenanceSection.button}</CtaButton>
       </div>
     </div>
     <div
@@ -65,7 +65,7 @@ const { className } = Astro.props;
         class="w-full h-full object-cover rounded-2xl"
       /> -->
       <LazyImage
-        src={environmentalImpactSection.visual}
+        src={maintenanceSection.visual}
         alt="environmental impact"
         width="700"
         class="w-full h-full object-cover rounded-2xl"

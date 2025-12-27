@@ -1,6 +1,6 @@
 import img from "./assets/green-hands.png";
 
-export const environmentalImpactSection = {
+export const maintenanceSection = {
   title: "Our Promise to You",
   subheading1_1: "Choosing Southwest Sweeper Sales for a",
   subheading1_2: " CleanerProperty",
