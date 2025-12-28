@@ -6,67 +6,55 @@ import Paragraph from "../components/shared/Paragraph.astro";
 
 const footerNav1 = [
   {
-    itemText: "Marketing",
-    itemLink: "#",
+    itemText: "Facility Services",
+    itemLink: "#facility-services",
   },
   {
-    itemText: "Analylitics",
-    itemLink: "#",
+    itemText: "Maintenance",
+    itemLink: "#maintenance",
   },
   {
-    itemText: "Commerce",
-    itemLink: "#",
+    itemText: "Rentals",
+    itemLink: "#rentals",
   },
   {
-    itemText: "Insights",
-    itemLink: "#",
+    itemText: "Inventory",
+    itemLink: "#inventory",
   },
 ];
 
 const footerSupport = [
   {
-    itemText: "Pricing",
-    itemLink: "#",
+    itemText: "Parts & Services",
+    itemLink: "#parts-services",
   },
   {
-    itemText: "Guides",
+    itemText: "Sales",
     itemLink: "#",
   },
   {
     itemText: "FAQ",
-    itemLink: "#",
+    itemLink: "#faq",
   },
   {
     itemText: "Contact",
-    itemLink: "#",
+    itemLink: "#contact",
   },
 ];
 
 const footerCompany = [
   {
-    itemText: "About",
-    itemLink: "#",
+    itemText: "Company",
+    itemLink: "#company",
   },
   {
-    itemText: "Blog",
-    itemLink: "#",
-  },
-  {
-    itemText: "Jobs",
-    itemLink: "#",
-  },
-  {
-    itemText: "Partners",
-    itemLink: "#",
-  },
-  {
-    itemText: "Jobs",
-    itemLink: "#",
+    itemText: "Employment",
+    itemLink: "#employment",
   },
 ];
 const footerLegal = [
   {
-    itemText: "Claim",
+    itemText: "Legal",
     itemLink: "#",
   },
   {
@@ -94,8 +82,7 @@ const footerLegal = [
               </div>
             </a>
             <Paragraph className={"mt-8"}>
-              Elevating Sustainability through Innovative Solutions for a
-              Greener Tomorrow.
+              Serving the Arizona Valley since 1975.
             </Paragraph>
           </div>
 
@@ -174,7 +161,7 @@ const footerLegal = [
 
         <GroupFooterNav>
           <FooterNav title={"Support"} navItems={footerSupport} />
-          <FooterNav title={"Ressources"} navItems={footerLegal} />
+          <FooterNav title={"Resources"} navItems={footerLegal} />
         </GroupFooterNav>
       </div>
     </Container>
@@ -184,13 +171,14 @@ const footerLegal = [
           class="flex justify-between items-center gap-6 md:text-lg text-heading-3"
         >
           <div>
-            &copy; <span id="year"></span> [Company Name]. All right reserved
+            &copy; 1975 - <span id="year"></span>, Southwest Sweeper Sales. All
+            rights reserved.
           </div>
           <div>
-            Made by <a
-              href="https://github.com/colabottles"
+            Produced by <a
+              href="https://toddl.dev"
               target="_blank"
-              class="font-semibold">colabottles</a
+              class="font-semibold">Todd Libby</a
             >
           </div>
         </div>
@@ -198,3 +186,9 @@ const footerLegal = [
     </div>
   </footer>
 </div>
+
+<script>
+  document.getElementById("year")!.textContent = new Date()
+    .getFullYear()
+    .toString();
+</script>
