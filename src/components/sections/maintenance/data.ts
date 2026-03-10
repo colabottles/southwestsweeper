@@ -1,4 +1,4 @@
-import img from "./assets/green-hands.png";
+import img from "./assets/swss.png";
 
 export const maintenanceSection = {
   title: "Our Promise to You",

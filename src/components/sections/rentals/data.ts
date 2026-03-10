@@ -1,6 +1,6 @@
-import img1 from "./assets/solar-person.png";
-import img2 from "./assets/wind-person.png";
-import img3 from "./assets/amazonas2.png";
+import img1 from "./assets/parkinglot.png";
+import img2 from "./assets/badpavement.png";
+import img3 from "./assets/resurface.png";
 
 export const rentalsSection = {
   title: "Rentals",

@@ -1,19 +1,17 @@
-import img1 from "./assets/solar3.png";
-import img2 from "./assets/wind.png";
+import img1 from "./assets/sweeper.png";
+import img2 from "./assets/street_sweeper.png";
 
-import img3 from "./assets/hydro.png";
-import img4 from "./assets/storage.png";
+import img3 from "./assets/garsweep.png";
+import img4 from "./assets/warsweep.png";
 
-import img5 from "./assets/smart-grid.png";
-import img6 from "./assets/green.png";
+import img5 from "./assets/porter.png";
+import img6 from "./assets/pwash.png";
 
-import img7 from "./assets/sweeper.jpg";
-import img8 from "./assets/green.png";
+import img7 from "./assets/window.png";
+import img8 from "./assets/suite.png";
 
-import img9 from "./assets/smart-grid.png";
-import img10 from "./assets/green.png";
-
-import img11 from "./assets/smart-grid.png";
+import img9 from "./assets/meter.png";
+import img10 from "./assets/haulaway.png";
 
 export const servicesSectionData = {
   title: "Our Facility Services",
@@ -83,12 +81,6 @@ export const servicesSectionData = {
       briefDescription:
         "Quickly reclaim your space with our efficient bulk trash removal and haul-away services. We safely collect and dispose of illegally dumped furniture, construction debris, and large items that standard waste management providers leave behind.",
       visual: img10,
-    },
-    {
-      title: "Bird Remediation",
-      briefDescription:
-        "Protect your property from health hazards and corrosive damage caused by pest birds. Our remediation experts install humane deterrents and perform deep cleaning of nesting sites to prevent infestations and preserve the structural integrity of your building.",
-      visual: img11,
     },
   ],
   callToAction:
