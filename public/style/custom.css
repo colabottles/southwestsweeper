@@ -282,11 +282,12 @@ ul {
 }
 
 .title2 h2 {
-  font-weight: 600;
+  font-weight: 800;
   font-size: 0.875rem;
   line-height: 1.5;
   letter-spacing: 0.05em;
   margin: 0.3rem 0.875rem;
+  text-transform: uppercase;
 }
 
 /* Title3 (h3) */
@@ -312,7 +313,7 @@ ul {
 
 /* SubTitle2 (bold paragraph intro) */
 .subtitle2 {
-  font-size: 1.125rem;
+  font-size: 1.75rem;
   font-weight: 700;
   line-height: 1.6;
   margin-bottom: 0.5rem;
@@ -1244,6 +1245,7 @@ ul {
   justify-content: center;
   text-align: center;
   margin-inline: auto;
+  padding-bottom: 2rem;
 }
 
 /* ------------------------------------------------------------
