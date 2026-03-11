@@ -328,6 +328,7 @@ ul {
 /* Paragraph */
 .paragraph {
   font-size: 1.75rem;
+  line-height: 1.6;
 }
 
 @media (min-width: 768px) {
@@ -899,6 +900,7 @@ ul {
 
 .service-card-desc {
   margin: 1.5rem;
+  line-height: 1.6;
   font-size: 0.875rem;
   color: #fff;
   opacity: 0;
