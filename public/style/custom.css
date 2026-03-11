@@ -301,8 +301,8 @@ ul {
 
 /* SubTitle (large italic intro text) */
 .subtitle {
-  font-size: clamp(1.125rem, 3vw, 2.25rem);
-  font-weight: 800;
+  font-size: clamp(1rem, 1.25vw, 1.25rem);
+  font-weight: 400;
   letter-spacing: 0.025em;
   -webkit-font-smoothing: antialiased;
   margin-bottom: 2rem;
