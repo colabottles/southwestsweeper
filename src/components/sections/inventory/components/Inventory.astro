@@ -1,34 +1,24 @@
 ---
 import LazyImage from "../../../shared/LazyImage.astro";
-
 export interface Props {
   name: string;
   visual: ImageMetadata;
 }
-
 const { name, visual } = Astro.props;
 ---
 
-<div
-  class="flex w-full max-w-[26rem] flex-col rounded-xl dark:bg-base-dark-800 shadow-lg dark:shadow-dark ring-1 ring-black/5"
->
-  <div class="flex flex-col items-center overflow-hidden p-4 gap-4">
-    <div class="shrink-0 h-[175px] w-[383px] overflow-hidden">
+<div class="inventory-card">
+  <div class="inventory-card-inner">
+    <div class="inventory-card-image">
       <LazyImage
         src={visual}
-        alt="profile picture"
+        alt={name}
         height={150}
-        class="inline-block w-full h-full object-cover"
+        class="inventory-card-img"
       />
     </div>
-    <div class="flex w-full flex-col items-center gap-0.5">
-      <div class="flex items-center justify-center">
-        <h5
-          class="block text-xl font-semibold leading-snug text-primary-900 dark:text-primary-100 text-center"
-        >
-          {name}
-        </h5>
-      </div>
+    <div class="inventory-card-label">
+      <h5 class="inventory-card-name">{name}</h5>
     </div>
   </div>
 </div>

@@ -2,24 +2,18 @@
 import GradientText from "../../../shared/GradientText.astro";
 import Paragraph from "../../../shared/Paragraph.astro";
 import SubTitle2 from "../../../shared/SubTitle2.astro";
-
 export interface Props {
   className?: string;
   subheading: { text1_1: string; text1_2: string; text2: string };
 }
-
 const { subheading, className = "" } = Astro.props;
 ---
 
-<div class=`${className}  rounded-xl m-5`>
-  <div class="flex flex-col justify-start font-sans">
-    <SubTitle2>
-      {subheading.text1_1}<GradientText>{subheading.text1_2}</GradientText>
-    </SubTitle2>
+<div class={`copy-card ${className}`}>
+  <div class="copy-card-heading">
+    <SubTitle2
+      >{subheading.text1_1}<GradientText>{subheading.text1_2}</GradientText
+      ></SubTitle2>
   </div>
-  <div class="flex flex-col justify-start">
-    <Paragraph className="text-lg md:text-xl font-normal">
-      {subheading.text2}
-    </Paragraph>
-  </div>
+  <div class="copy-card-body"><Paragraph>{subheading.text2}</Paragraph></div>
 </div>

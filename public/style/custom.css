@@ -1,13 +1,19 @@
-@import "tailwindcss";
+/* ============================================================
+   SOUTHWEST SWEEPER SALES — custom.css
+   Vanilla CSS replacing Tailwind
+   ============================================================ */
 
-@theme {
-  /* Colors */
-  --color-primary: #7a9465;
+/* ------------------------------------------------------------
+   1. DESIGN TOKENS
+   ------------------------------------------------------------ */
+:root {
+  /* Primary (green) */
   --color-primary-50: #f6f7f4;
   --color-primary-100: #eaece5;
   --color-primary-200: #d0d4c5;
   --color-primary-300: #b4bea7;
   --color-primary-400: #97ac82;
+  --color-primary: #7a9465;
   --color-primary-500: #7a9465;
   --color-primary-600: #688a65;
   --color-primary-700: #507050;
@@ -15,12 +21,13 @@
   --color-primary-900: #304430;
   --color-primary-950: #2c341b;
 
-  --color-secondary: #1eadff;
+  /* Secondary (blue) */
   --color-secondary-50: #edfaff;
   --color-secondary-100: #d6f2ff;
   --color-secondary-200: #b5eaff;
   --color-secondary-300: #83dfff;
   --color-secondary-400: #48cbff;
+  --color-secondary: #1eadff;
   --color-secondary-500: #1eadff;
   --color-secondary-600: #068fff;
   --color-secondary-700: #007bff;
@@ -28,12 +35,13 @@
   --color-secondary-900: #0d519b;
   --color-secondary-950: #0e315d;
 
-  --color-cta: #ffd700;
+  /* CTA (gold) */
   --color-cta-50: #ffffe7;
   --color-cta-100: #feffc1;
   --color-cta-200: #fffd86;
   --color-cta-300: #fff441;
   --color-cta-400: #ffe60d;
+  --color-cta: #ffd700;
   --color-cta-500: #ffd700;
   --color-cta-600: #d19e00;
   --color-cta-700: #a67102;
@@ -41,6 +49,7 @@
   --color-cta-900: #74480f;
   --color-cta-950: #442604;
 
+  /* Base (light backgrounds) */
   --color-base: #f9f9f9;
   --color-base-50: #f9f9f9;
   --color-base-100: #efefef;
@@ -54,6 +63,7 @@
   --color-base-900: #9e9e9e;
   --color-base-950: #949494;
 
+  /* Base Dark */
   --color-base-dark: #1a1a1a;
   --color-base-dark-50: #808080;
   --color-base-dark-100: #757575;
@@ -67,73 +77,596 @@
   --color-base-dark-900: #242424;
   --color-base-dark-950: #1a1a1a;
 
+  /* Accent */
   --color-accent: #000000;
-  --color-accent-50: #ffffff;
-  --color-accent-100: #c7c7c7;
-  --color-accent-200: #b3b3b3;
-  --color-accent-300: #949494;
-  --color-accent-400: #707070;
-  --color-accent-500: #545454;
-  --color-accent-600: #3d3d3d;
-  --color-accent-700: #292929;
-  --color-accent-800: #1c1c1c;
-  --color-accent-900: #141414;
-  --color-accent-950: #000000;
   --color-accent-light: #ffffff;
   --color-accent-dark: #000000;
 
-  /* Fonts */
-  --font-sans: "Raleway", ui-sans-serif, system-ui, sans-serif;
-
-  /* Breakpoints */
-  --breakpoint-midmd: 880px;
-
-  /* Box shadows */
+  /* Shadows */
   --shadow-aesthetic: 0 3px 10px rgb(0 0 0 / 0.2);
   --shadow-dark: inset 0 1px 0 0 #ffffff0d;
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-card: 0 0 80px rgba(0, 0, 0, 0.25);
+
+  /* Typography */
+  --font-sans: "Raleway", ui-sans-serif, system-ui, sans-serif;
+
+  /* Breakpoints (for reference — used in media queries below) */
+  --bp-sm: 640px;
+  --bp-md: 768px;
+  --bp-midmd: 880px;
+  --bp-lg: 1024px;
+  --bp-xl: 1280px;
+  --bp-2xl: 1536px;
+
+  /* Semantic colour aliases — light mode */
+  --bg-body: var(--color-base);
+  --text-body: var(--color-accent);
+  --bg-footer: var(--color-base-200);
+  --bg-hero: var(--color-base-100);
+  --bg-card: var(--color-base);
+  --fill-hero-svg: var(--color-base-100);
+  --fill-card-svg: var(--color-base);
 }
 
-@custom-variant dark (&:where(.dark, .dark *));
-
-/* :root {
-  --color-bg: 255 255 255;
-  --color-border: 255 255 255;
-  --color-box: 255 255 255;
-  --box-border: 229 231 235;
-  --box-sd: 226 232 240 / 0.5;
-  --heading-1: 23 37 84;
-  --heading-2: 31 41 55;
-  --heading-3: 55 65 81;
-}
-
+/* Dark mode overrides */
 .dark {
-  --color-bg: 3 7 18;
-  --color-box: 17 24 39;
-  --box-border: 243 244 246/0.1;
-  --box-sd: transparent;
+  --bg-body: var(--color-base-dark);
+  --text-body: var(--color-accent-light);
+  --bg-footer: var(--color-base-dark-800);
+  --bg-hero: var(--color-base-dark-900);
+  --bg-card: var(--color-base-dark-800);
+  --fill-hero-svg: var(--color-base-dark-900);
+  --fill-card-svg: var(--color-base-dark-800);
+}
 
-  --heading-1: 255 255 255;
-  --heading-2: 243 244 246;
-  --heading-3: 209 213 219;
-} */
+/* ------------------------------------------------------------
+   2. RESET / BASE
+   ------------------------------------------------------------ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-/* @tailwind base;
-@tailwind components;
-@tailwind utilities; */
-
-/* @layer base {
-  html {
-    scroll-behavior: smooth;
-    font-family: "Raleway" sans-serif;
-  }
-} */
 html {
   scroll-behavior: smooth;
+  font-size: 16px;
 }
 
-/* body {
-  font-family: "Raleway", sans-serif;
-} */
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-body);
+  color: var(--text-body);
+  min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+body.nav-open {
+  overflow-y: hidden;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+/* ------------------------------------------------------------
+   3. UTILITIES
+   ------------------------------------------------------------ */
+
+/* Screen-reader only */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Gradient text */
+.gradient-text {
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-image: linear-gradient(to bottom right,
+      var(--color-primary-500) 20%,
+      var(--color-primary) 50%,
+      var(--color-primary-500));
+}
+
+/* Glass effects */
+.glass {
+  background: rgba(255, 255, 255, 0.1) !important;
+  backdrop-filter: blur(35px);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(35px);
+  border-radius: 20px;
+  box-shadow: var(--shadow-card);
+}
+
+/* ------------------------------------------------------------
+   4. CONTAINER
+   ------------------------------------------------------------ */
+.container {
+  width: 100%;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+}
+
+@media (min-width: 640px) {
+  .container {
+    padding-inline: 2rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding-inline: 3.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding-inline: 1.25rem;
+  }
+}
+
+.container--wide {
+  max-width: 80rem;
+}
+
+/* 1280px */
+.container--medium {
+  max-width: 64rem;
+}
+
+/* 1024px */
+.container--narrow {
+  max-width: 48rem;
+}
+
+/* 768px  */
+.container--full {
+  width: 100%;
+}
+
+/* ------------------------------------------------------------
+   5. TYPOGRAPHY COMPONENTS
+   ------------------------------------------------------------ */
+
+/* Title (h1) */
+.title {
+  font-size: clamp(2.5rem, 6vw, 3.75rem);
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+}
+
+/* Title2 (section badge) */
+.title2 {
+  display: inline-flex;
+  border: 1px solid var(--color-primary);
+  background-color: color-mix(in srgb, var(--color-primary) 10%, transparent);
+  color: var(--color-primary-800);
+  border-radius: 9999px;
+  margin-bottom: 2.5rem;
+  width: fit-content;
+}
+
+.dark .title2 {
+  color: var(--color-primary);
+}
+
+.title2 h2 {
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0.25rem 0.5rem;
+}
+
+/* Title3 (h3) */
+.title3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.title3--no-mb {
+  margin-bottom: 0;
+}
+
+/* SubTitle (large italic intro text) */
+.subtitle {
+  font-size: clamp(1.125rem, 3vw, 2.25rem);
+  font-weight: 800;
+  letter-spacing: 0.025em;
+  -webkit-font-smoothing: antialiased;
+  margin-bottom: 2rem;
+}
+
+/* SubTitle2 (bold paragraph intro) */
+.subtitle2 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 0.5rem;
+}
+
+/* SubTitle3 (medium paragraph intro) */
+.subtitle3 {
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+/* Paragraph */
+.paragraph {
+  font-size: 1rem;
+}
+
+@media (min-width: 768px) {
+  .paragraph {
+    font-size: 1.125rem;
+  }
+}
+
+/* ------------------------------------------------------------
+   6. BUTTONS & LINKS
+   ------------------------------------------------------------ */
+
+/* Shared button base */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid transparent;
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 300ms linear, border-color 300ms linear, color 300ms linear;
+  outline: none;
+}
+
+/* BtnLink variants */
+.btn-link--primary {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-accent);
+}
+
+.btn-link--primary:hover {
+  border-color: var(--color-primary-800);
+}
+
+.btn-link--secondary {
+  background-color: var(--color-secondary);
+  border-color: var(--color-secondary);
+  color: var(--color-accent);
+}
+
+.btn-link--secondary:hover {
+  border-color: var(--color-secondary-800);
+}
+
+.btn-link--cta {
+  background-color: var(--color-cta);
+  border-color: var(--color-cta);
+  color: var(--color-accent);
+}
+
+.btn-link--cta:hover {
+  border-color: var(--color-cta-800);
+}
+
+/* Button outline variants */
+.btn--outline-primary {
+  background-color: transparent;
+  border-color: var(--color-primary-500);
+  color: var(--color-primary-400);
+}
+
+.btn--outline-primary:hover {
+  background-color: color-mix(in srgb, var(--color-primary-500) 10%, transparent);
+}
+
+.btn--outline-secondary {
+  background-color: transparent;
+  border-color: var(--color-secondary-500);
+  color: var(--color-secondary-500);
+}
+
+.btn--outline-secondary:hover {
+  background-color: color-mix(in srgb, var(--color-secondary-500) 10%, transparent);
+}
+
+/* Button solid variants */
+.btn--solid-primary {
+  background-color: var(--color-primary-900);
+  border-color: transparent;
+  color: var(--color-accent);
+}
+
+.btn--solid-primary:hover {
+  background-color: var(--color-primary-800);
+}
+
+.btn--solid-primary:active {
+  background-color: var(--color-primary-700);
+}
+
+/* CTA Button */
+.btn-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid transparent;
+  background-color: var(--color-primary-900);
+  color: var(--color-accent-light);
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 1.125rem;
+  letter-spacing: 0.025em;
+  cursor: pointer;
+  transition: background-color 300ms linear;
+  outline: none;
+}
+
+.btn-cta:hover {
+  background-color: var(--color-primary-800);
+}
+
+/* Theme switch button */
+.btn-theme-switch {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 0.5rem;
+  border-radius: 9999px;
+  border: 1px solid var(--color-primary);
+  background-color: transparent;
+  color: var(--color-accent);
+  cursor: pointer;
+  transition: background-color 300ms linear, border-color 300ms linear;
+  outline: none;
+}
+
+.dark .btn-theme-switch {
+  color: var(--color-accent-light);
+}
+
+.btn-theme-switch:hover {
+  border-color: var(--color-primary-800);
+  background-color: var(--color-primary-100);
+}
+
+.dark .btn-theme-switch:hover {
+  background-color: var(--color-primary-900);
+}
+
+.btn-theme-switch svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+/* Show/hide sun vs moon icon */
+.icon-moon {
+  display: none;
+}
+
+.icon-sun {
+  display: block;
+}
+
+.dark .icon-moon {
+  display: block;
+}
+
+.dark .icon-sun {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .btn-theme-switch {
+    padding: 0.75rem;
+  }
+}
+
+/* ------------------------------------------------------------
+   7. HEADER / NAVBAR
+   ------------------------------------------------------------ */
+.site-header {
+  position: absolute;
+  inset-inline: 0;
+  top: 0;
+  z-index: 50;
+  padding: 0.5rem 1.5rem;
+}
+
+.site-nav {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  position: relative;
+}
+
+/* Logo */
+.nav-logo {
+  min-width: max-content;
+  display: inline-flex;
+  position: relative;
+}
+
+.nav-logo a {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.nav-logo-img-wrap {
+  position: relative;
+  height: 5rem;
+  overflow: hidden;
+  display: flex;
+  border-radius: 0.75rem;
+}
+
+.nav-logo-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Overlay (mobile) */
+.nav-overlay {
+  position: fixed;
+  inset: 0;
+  display: none;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(12px);
+  z-index: 40;
+}
+
+.nav-overlay[data-is-visible="true"] {
+  display: flex;
+}
+
+/* Nav drawer */
+.nav-drawer {
+  display: flex;
+  height: 0;
+  overflow: hidden;
+  flex-direction: column;
+  gap: 1.5rem 1rem;
+  width: 100%;
+  position: absolute;
+  top: 100%;
+  background-color: var(--bg-body);
+  border-inline: 1px solid var(--color-base-200);
+  transition: height 300ms linear;
+  z-index: 49;
+}
+
+.dark .nav-drawer {
+  border-inline-color: var(--color-base-dark-700);
+}
+
+/* Nav list */
+.nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem 0.75rem;
+  padding: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-base-200);
+  font-size: 1.125rem;
+}
+
+.dark .nav-list {
+  border-top-color: var(--color-base-dark-700);
+}
+
+/* Nav item */
+.nav-item a {
+  display: block;
+  font-weight: 500;
+  padding: 0.75rem 0;
+  transition: color 300ms linear;
+}
+
+.nav-item a:hover {
+  color: var(--color-primary-400);
+}
+
+/* Nav CTA wrapper */
+.nav-cta-wrap {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 0 1.5rem 1.5rem;
+  border-bottom: 1px solid var(--color-base-200);
+}
+
+.dark .nav-cta-wrap {
+  border-bottom-color: var(--color-base-dark-800);
+}
+
+/* Nav actions (right side) */
+.nav-actions {
+  min-width: max-content;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* Hamburger button */
+.nav-toggle {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  width: 1.75rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 1.5rem;
+  height: 2px;
+  border-radius: 9999px;
+  background-color: #000;
+  transition: transform 300ms linear, opacity 300ms linear;
+}
+
+.dark .nav-toggle span {
+  background-color: #fff;
+}
+
+#line2 {
+  margin-top: 0.25rem;
+}
+
+#line3 {
+  margin-top: 0.25rem;
+}
 
 [data-toggle-nav][data-open-nav="true"] #line1 {
   transform: translateY(0.375rem) rotate(40deg);
@@ -148,21 +681,722 @@ html {
   transform: translateY(-0.375rem) rotate(-40deg);
 }
 
-[data-nav-overlay][data-is-visible="true"] {
-  visibility: visible;
+/* Desktop nav */
+@media (min-width: 1024px) {
+  .nav-drawer {
+    display: flex !important;
+    height: auto !important;
+    overflow: visible;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    top: 0;
+    background-color: transparent;
+    border-inline: none;
+  }
+
+  .nav-list {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0;
+    border-top: none;
+    font-size: 1rem;
+  }
+
+  .nav-cta-wrap {
+    min-width: max-content;
+    width: auto;
+    padding: 0;
+    border-bottom: none;
+  }
+
+  .nav-cta-wrap .btn {
+    width: auto;
+  }
+
+  .nav-toggle {
+    display: none;
+    visibility: hidden;
+  }
+}
+
+/* ------------------------------------------------------------
+   8. HERO SECTION
+   ------------------------------------------------------------ */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+}
+
+.hero-inner {
+  width: 100%;
+  height: 80vh;
+  padding-top: 6.25rem;
+}
+
+.hero-grid {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  background-color: var(--bg-hero);
+}
+
+@media (min-width: 768px) {
+  .hero-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.hero-content {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
 }
 
-.glass {
-  background: rgba(255, 255, 255, 0.1) !important;
-  backdrop-filter: blur(35px);
+@media (min-width: 768px) {
+  .hero-content {
+    margin-left: auto;
+  }
 }
 
-.glass-card {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(35px);
-  border-radius: 20px;
-  /* border: 2px solid rgba(255, 255, 255, 0.1); */
-  box-shadow: 0 0 80px rgba(0, 0, 0, 0.25);
-  /* padding: 30px 30px 30px 30px; */
+.hero-subtitle {
+  margin-top: 2.5rem;
+  line-height: 2.25rem;
+  font-style: italic;
+}
+
+.hero-cta {
+  padding-top: 2.5rem;
+}
+
+.hero-image-wrap {
+  display: flex;
+  position: relative;
+  padding-top: 2.5rem;
+}
+
+@media (min-width: 768px) {
+  .hero-image-wrap {
+    padding: 0;
+  }
+}
+
+.hero-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-svg-overlay {
+  position: absolute;
+  top: 0;
+  inset-inline-start: 0;
+  height: 100%;
+  fill: var(--fill-hero-svg);
+  z-index: 10;
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .hero-svg-overlay {
+    display: block;
+  }
+}
+
+/* ------------------------------------------------------------
+   9. FACILITY SERVICES SECTION
+   ------------------------------------------------------------ */
+/* .facility-services { // section wrapper } */
+
+.services-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.5rem 1rem;
+}
+
+@media (min-width: 768px) {
+  .services-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .services-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.services-grid .copy-card {
+  grid-column: span 1;
+}
+
+@media (min-width: 768px) {
+  .services-grid .copy-card {
+    grid-column: span 2;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/* ServiceCard */
+.service-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  height: 100%;
+  transition: all 300ms linear;
+}
+
+.service-card img {
+  width: 100%;
+  height: 24rem;
+  object-fit: cover;
+  transition: transform 300ms linear;
+}
+
+.service-card:hover img {
+  transform: scale(1.25);
+}
+
+.service-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.6));
+  transition: background 300ms linear;
+}
+
+.service-card:hover .service-card-overlay {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.service-card-body {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  transform: translateY(calc(100% - 7.5rem));
+  transition: transform 300ms linear;
+}
+
+.service-card:hover .service-card-body {
+  transform: translateY(0);
+}
+
+.service-card-title {
+  margin: 1.5rem;
+  color: #fff;
+}
+
+.service-card-desc {
+  margin: 1.5rem;
+  font-size: 0.875rem;
+  color: #fff;
+  opacity: 0;
+  transition: opacity 300ms linear;
+}
+
+.service-card:hover .service-card-desc {
+  opacity: 1;
+}
+
+/* ServiceCopyTextCard */
+.copy-card {
+  border-radius: 0.75rem;
+  margin: 1.25rem;
+}
+
+/* ------------------------------------------------------------
+   10. PARTS & SERVICE / MAINTENANCE — alternating layout
+   ------------------------------------------------------------ */
+.alternating-section-item {
+  padding-bottom: 8rem;
+}
+
+.alternating-row {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  margin-inline: auto;
+  max-width: 80rem;
+  width: 100%;
+}
+
+@media (min-width: 880px) {
+  .alternating-row {
+    flex-direction: row;
+  }
+
+  .alternating-row--reverse {
+    flex-direction: row-reverse;
+  }
+}
+
+.alternating-image-col {
+  max-width: 28rem;
+  margin-inline: auto;
+  display: flex;
+  width: 91.667%;
+}
+
+@media (min-width: 880px) {
+  .alternating-image-col {
+    max-width: none;
+    width: 41.667%;
+    height: auto;
+    margin-inline: 0;
+    padding-right: 2.5rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .alternating-image-col {
+    padding-right: 0.5rem;
+  }
+}
+
+.alternating-image-wrap {
+  width: 100%;
+  max-height: 50vh;
+  position: relative;
+}
+
+@media (min-width: 880px) {
+  .alternating-image-wrap {
+    max-height: none;
+    height: 100%;
+  }
+}
+
+.alternating-image-wrap img {
+  border-radius: 1.5rem;
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.alternating-text-col {
+  max-width: 28rem;
+  margin-inline: auto;
+  width: 91.667%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 880px) {
+  .alternating-text-col {
+    width: 58.333%;
+  }
+}
+
+/* Maintenance — side-by-side (not alternating) */
+.maintenance-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+@media (min-width: 880px) {
+  .maintenance-layout {
+    flex-direction: row;
+    gap: 3rem;
+  }
+}
+
+.maintenance-text {
+  max-width: 28rem;
+  margin-right: auto;
+  width: 91.667%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 880px) {
+  .maintenance-text {
+    width: 58.333%;
+  }
+}
+
+.maintenance-image {
+  display: flex;
+  width: 91.667%;
+}
+
+@media (min-width: 880px) {
+  .maintenance-image {
+    width: 41.667%;
+    height: auto;
+  }
+}
+
+.maintenance-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 1rem;
+}
+
+.maintenance-points {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.maintenance-point-check {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 9999px;
+  background-color: var(--color-base-200);
+  color: var(--color-primary);
+  margin-right: 0.75rem;
+  font-weight: 700;
+}
+
+.dark .maintenance-point-check {
+  background-color: var(--color-base-dark-700);
+}
+
+.maintenance-cta {
+  padding-top: 2.5rem;
+}
+
+/* ------------------------------------------------------------
+   11. RENTAL SECTION
+   ------------------------------------------------------------ */
+.rentals-grid {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .rentals-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .rentals-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+}
+
+/* Rental card */
+.rental-card {
+  overflow: hidden;
+  border-radius: 0.5rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-card);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  padding-top: 0.5rem;
+  transition: all 300ms linear;
+}
+
+.rental-card-image-wrap {
+  position: relative;
+  height: 24rem;
+  overflow: hidden;
+}
+
+.rental-card-image-wrap img {
+  width: 100%;
+  height: 24rem;
+  object-fit: cover;
+  transition: transform 300ms ease-in-out;
+}
+
+.rental-card:hover .rental-card-image-wrap img {
+  transform: scale(1.05);
+}
+
+.rental-card-svg-top {
+  position: absolute;
+  top: -1px;
+  inset-inline-start: 0;
+  fill: var(--fill-card-svg);
+}
+
+.rental-card-svg-bottom {
+  position: absolute;
+  bottom: -1px;
+  inset-inline-start: 0;
+  fill: var(--fill-card-svg);
+}
+
+.rental-card-source {
+  position: absolute;
+  top: 0;
+  inset-inline-end: 0;
+  margin: 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: color-mix(in srgb, var(--color-primary-900) 50%, transparent);
+}
+
+.dark .rental-card-source {
+  color: color-mix(in srgb, var(--color-primary) 70%, transparent);
+}
+
+.rental-card-body {
+  display: grid;
+  grid-template-columns: 1fr;
+  width: 100%;
+  height: 100%;
+  padding: 1.5rem;
+  gap: 1rem;
+}
+
+.rental-card-desc {
+  font-size: 0.875rem;
+  opacity: 0.6;
+}
+
+/* ------------------------------------------------------------
+   12. INVENTORY SECTION
+   ------------------------------------------------------------ */
+.inventory-grid {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+@media (min-width: 880px) {
+  .inventory-grid {
+    flex-direction: row;
+  }
+}
+
+.inventory-card {
+  display: flex;
+  width: 100%;
+  max-width: 26rem;
+  flex-direction: column;
+  border-radius: 0.75rem;
+  background-color: var(--bg-card);
+  box-shadow: var(--shadow-lg);
+  outline: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.inventory-card-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  padding: 1rem;
+  gap: 1rem;
+}
+
+.inventory-card-image {
+  flex-shrink: 0;
+  height: 175px;
+  width: 383px;
+  overflow: hidden;
+}
+
+.inventory-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.inventory-card-name {
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--color-primary-900);
+  text-align: center;
+}
+
+.dark .inventory-card-name {
+  color: var(--color-primary-100);
+}
+
+/* ------------------------------------------------------------
+   13. SECTION — CENTERED HEADER HELPER
+   ------------------------------------------------------------ */
+.section-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-inline: auto;
+}
+
+/* ------------------------------------------------------------
+   14. FOOTER
+   ------------------------------------------------------------ */
+.site-footer-wrap {
+  position: relative;
+  margin-top: 4rem;
+  background-color: var(--bg-footer);
+}
+
+.site-footer {
+  position: relative;
+  padding-top: 7rem;
+  border-radius: 1.5rem 1.5rem 0 0;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  position: relative;
+  padding-bottom: 2rem;
+}
+
+@media (min-width: 1024px) {
+  .footer-grid {
+    grid-template-columns: repeat(3, 1fr);
+    align-items: stretch;
+  }
+}
+
+.footer-brand {
+  grid-column: span 2;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 1024px) {
+  .footer-brand {
+    grid-column: span 1;
+  }
+}
+
+.footer-brand-name {
+  display: inline-flex;
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.footer-nav-group {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.footer-nav h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  margin-bottom: 1.5rem;
+}
+
+.footer-nav ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  font-weight: 500;
+}
+
+@media (min-width: 768px) {
+  .footer-nav ul {
+    font-size: 1.125rem;
+  }
+}
+
+.footer-nav a {
+  transition: color 300ms;
+}
+
+.footer-nav a:hover {
+  color: var(--color-primary);
+}
+
+.footer-bottom {
+  padding-block: 0.5rem;
+  position: relative;
+}
+
+.footer-bottom-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .footer-bottom-inner {
+    font-size: 1.125rem;
+  }
+}
+
+.footer-bottom a {
+  font-weight: 600;
+}
+
+/* ------------------------------------------------------------
+   15. SITE MAIN
+   ------------------------------------------------------------ */
+.site-main {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .site-main {
+    gap: 10rem;
+  }
+}
+
+/* ------------------------------------------------------------
+   16. MISC HELPERS
+   ------------------------------------------------------------ */
+.flex-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mt-8 {
+  margin-top: 2rem;
+}
+
+.mt-3 {
+  margin-top: 0.75rem;
+}
+
+.copy-card-heading {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.copy-card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* rental card action button row */
+.rental-card-action {
+  margin-top: 1rem;
+}
+
+/* ring utility used on cards */
+.rental-card,
+.inventory-card {
+  outline: 1px solid rgba(0, 0, 0, 0.05);
 }

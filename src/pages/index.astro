@@ -8,18 +8,13 @@ import Layout from "../layouts/Layout.astro";
 import InventorySection from "../components/sections/inventory/InventorySection.astro";
 ---
 
-<Layout title="Welcome to Southwest Sweeper Sales! ">
-  <main class="flex flex-col gap-y-20 md:gap-y-40 overflow-hidden">
+<Layout title="Welcome to Southwest Sweeper Sales!">
+  <main class="site-main">
     <Hero />
-
     <FacilityServices />
-
     <PartsService />
-
     <Maintenance />
-
     <Rentals />
-
     <InventorySection />
   </main>
 </Layout>

@@ -5,37 +5,27 @@ import SubTitle2 from "../../shared/SubTitle2.astro";
 import Title2 from "../../shared/Title2.astro";
 import Inventory from "./components/Inventory.astro";
 import { inventorySection } from "./data.ts";
-
 export interface Props {
   className?: string;
 }
-
-const { className } = Astro.props;
+const { className = "" } = Astro.props;
 ---
 
-<section id="inventory" class=`${className}`>
-  <Container
-    className="mx-auto flex flex-col items-center justify-center text-center"
-  >
+<section id="inventory" class={className}>
+  <Container className="section-header">
     <Title2>{inventorySection.title}</Title2>
-    <SubTitle2>
-      <GradientText> {inventorySection.subheading1_1}</GradientText><br />
-      {inventorySection.subheading1_2}
-    </SubTitle2>
-  </Container>
-  <Container className="flex flex-col items-center">
-    <div
-      class="mt-8 flex flex-col gap-8 midmd:flex-row text-heading-3 font-medium"
+    <SubTitle2
+      ><GradientText>{inventorySection.subheading1_1}</GradientText><br />{
+        inventorySection.subheading1_2
+      }</SubTitle2
     >
+  </Container>
+  <Container className="flex-center">
+    <div class="inventory-grid">
       {
-        inventorySection.inventory.map((inventory) => {
-          return (
-            <Inventory
-              name={inventory.name}
-              visual={inventory.visual}
-            />
-          );
-        })
+        inventorySection.inventory.map((item) => (
+          <Inventory name={item.name} visual={item.visual} />
+        ))
       }
     </div>
   </Container>

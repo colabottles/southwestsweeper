@@ -3,123 +3,69 @@ import GroupFooterNav from "../components/blocks/GroupFooterNav.astro";
 import Container from "../components/shared/Container.astro";
 import FooterNav from "../components/shared/FooterNav.astro";
 import Paragraph from "../components/shared/Paragraph.astro";
-
 const footerNav1 = [
-  {
-    itemText: "Facility Services",
-    itemLink: "#facility-services",
-  },
-  {
-    itemText: "Maintenance",
-    itemLink: "#maintenance",
-  },
-  {
-    itemText: "Rentals",
-    itemLink: "#rentals",
-  },
-  {
-    itemText: "Inventory",
-    itemLink: "#inventory",
-  },
+  { itemText: "Facility Services", itemLink: "#facility-services" },
+  { itemText: "Maintenance", itemLink: "#maintenance" },
+  { itemText: "Rentals", itemLink: "#rentals" },
+  { itemText: "Inventory", itemLink: "#inventory" },
 ];
-
 const footerSupport = [
-  {
-    itemText: "Parts & Service",
-    itemLink: "#parts-service",
-  },
-  {
-    itemText: "Sales",
-    itemLink: "#",
-  },
-  {
-    itemText: "FAQ",
-    itemLink: "#faq",
-  },
-  {
-    itemText: "Contact",
-    itemLink: "#contact",
-  },
+  { itemText: "Parts & Service", itemLink: "#parts-service" },
+  { itemText: "Sales", itemLink: "#" },
+  { itemText: "FAQ", itemLink: "#faq" },
+  { itemText: "Contact", itemLink: "#contact" },
 ];
-
 const footerCompany = [
-  {
-    itemText: "Company",
-    itemLink: "#company",
-  },
-  {
-    itemText: "Employment",
-    itemLink: "#employment",
-  },
+  { itemText: "Company", itemLink: "#company" },
+  { itemText: "Employment", itemLink: "#employment" },
 ];
 const footerLegal = [
-  {
-    itemText: "Legal",
-    itemLink: "#",
-  },
-  {
-    itemText: "Privacy",
-    itemLink: "#",
-  },
-  {
-    itemText: "Terms",
-    itemLink: "#",
-  },
+  { itemText: "Legal", itemLink: "#" },
+  { itemText: "Privacy", itemLink: "#" },
+  { itemText: "Terms", itemLink: "#" },
 ];
 ---
 
-<div class="relative mt-16 bg-base-200 dark:bg-base-dark-800">
-  <footer class="relative pt-28 rounded-t-3xl">
-    <Container className="pb-8 relative overflow-auto ">
-      <div
-        class="grid grid-cols-2 lg:grid-cols-3 lg:items-stretch gap-8 relative"
-      >
-        <div class="col-span-2 lg:col-span-1 h-auto flex flex-col">
-          <div class="h-full">
-            <a href="#" class="relative flex items-center gap-3">
-              <div class="inline-flex text-lg font-semibold text-heading-1">
-                Southwest Sweeper Sales
-              </div>
-            </a>
-            <Paragraph className={"mt-8"}>
-              Serving the Arizona Valley since 1975.
-            </Paragraph>
+<div class="site-footer-wrap">
+  <footer class="site-footer">
+    <Container className="container--wide">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div>
+            <a href="#"
+              ><span class="footer-brand-name">Southwest Sweeper Sales</span></a
+            >
+            <Paragraph className="mt-8"
+              >Serving the Arizona Valley since 1975.</Paragraph
+            >
           </div>
         </div>
-
         <GroupFooterNav>
-          <FooterNav title={"Company"} navItems={footerCompany} />
-          <FooterNav title={"Solutions"} navItems={footerNav1} />
+          <FooterNav title="Company" navItems={footerCompany} />
+          <FooterNav title="Solutions" navItems={footerNav1} />
         </GroupFooterNav>
-
         <GroupFooterNav>
-          <FooterNav title={"Support"} navItems={footerSupport} />
-          <FooterNav title={"Resources"} navItems={footerLegal} />
+          <FooterNav title="Support" navItems={footerSupport} />
+          <FooterNav title="Resources" navItems={footerLegal} />
         </GroupFooterNav>
       </div>
     </Container>
-    <div class="py-2 relative">
-      <Container>
-        <div
-          class="flex justify-between items-center gap-6 md:text-lg text-heading-3"
-        >
+    <div class="footer-bottom">
+      <Container className="container--wide">
+        <div class="footer-bottom-inner">
           <div>
             &copy; 1975 - <span id="year"></span>, Southwest Sweeper Sales. All
             rights reserved.
           </div>
           <div>
-            Produced by <a
-              href="https://toddl.dev"
-              target="_blank"
-              class="font-semibold">Todd Libby</a
-            >
+            Produced by <a href="https://toddl.dev" target="_blank"
+              >Todd Libby</a>
           </div>
         </div>
       </Container>
     </div>
   </footer>
 </div>
-
 <script>
   document.getElementById("year")!.textContent = new Date()
     .getFullYear()
