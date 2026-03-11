@@ -1,6 +1,6 @@
-import img1 from "./assets/person1.png";
-import img2 from "./assets/person2.png";
-import img3 from "./assets/person3.png";
+import img1 from "./assets/v80.png";
+import img2 from "./assets/gx12.png";
+import img3 from "./assets/pb.png";
 
 export const inventorySection = {
   title: "What We Carry",
@@ -8,25 +8,16 @@ export const inventorySection = {
   subheading1_2: " Of What We Carry In Our Inventory",
   inventory: [
     {
-      name: "Emily Johnson",
       visual: img1,
-      occupation: "Property Owner",
-      quote:
-        "Switching to Southwest Sweeper Sales was the best decision I made. Our home is now powered by clean energy, and I feel great knowing I'm contributing to a healthier planet.",
+      name: "Street Sweepers",
     },
     {
-      name: "Carlos Rodriguez",
       visual: img2,
-      occupation: "Business Owner",
-      quote:
-        "As a business owner, sustainability is crucial. Southwest Sweeper Sales provided us with a seamless transition to green energy, and we've seen a positive impact on both the environment and our operating costs.",
+      name: "Parking Lot Sweepers",
     },
     {
-      name: "Sophie Chen",
       visual: img3,
-      occupation: "Property Manager",
-      quote:
-        "I'm passionate about the environment, and Southwest Sweeper Sales aligns perfectly with my values. Their commitment to renewable energy and reducing carbon footprint is commendable.",
+      name: "Industrial Sweepers & Scrubbers",
     },
   ],
   visual: "customer-testimonials-image.jpg",
