@@ -89,7 +89,7 @@
   --shadow-card: 0 0 80px rgba(0, 0, 0, 0.25);
 
   /* Typography */
-  --font-sans: "Raleway", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Spline Sans", ui-sans-serif, system-ui, sans-serif;
 
   /* Breakpoints (for reference — used in media queries below) */
   --bp-sm: 640px;
