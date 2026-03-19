@@ -1,7 +1,7 @@
 {
   "name": "southwestsweeper",
   "type": "module",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "scripts": {
     "dev": "astro dev --host",
     "start": "astro dev",
@@ -10,18 +10,20 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/check": "^0.9.7",
-    "npm-check-updates": "^19.6.3",
+    "@astrojs/check": "^0.9.8",
+    "@contentful/rich-text-html-renderer": "^17.1.6",
+    "contentful": "^11.11.0",
+    "npm-check-updates": "^19.6.5",
     "typescript": "^5.9.3"
   },
   "devDependencies": {
-    "astro": "^6.0.2",
-    "baseline-browser-mapping": "^2.10.0",
+    "astro": "^6.0.6",
+    "baseline-browser-mapping": "^2.10.8",
     "prettier": "^3.8.1",
     "prettier-plugin-astro": "^0.14.1"
   },
   "engines": {
-    "node": "20"
+    "node": ">=20"
   },
   "node": "20.11.0",
   "volta": {

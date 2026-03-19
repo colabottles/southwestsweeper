@@ -518,6 +518,21 @@ ul {
   top: 0;
   z-index: 50;
   padding: 0.5rem 1.5rem;
+  background-color: var(--color-primary-900);
+  backdrop-filter: blur(8px);
+}
+
+.dark .site-header {
+  background-color: var(--color-primary-700);
+}
+
+.site-header .nav-item a {
+  color: var(--color-accent-light);
+}
+
+.site-header .nav-item a:hover {
+  color: var(--color-cta);
+  text-decoration: underline;
 }
 
 .site-nav {

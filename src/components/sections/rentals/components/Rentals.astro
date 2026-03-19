@@ -38,7 +38,11 @@ const { title, description, source, visual } = Astro.props;
     <Title3>{title}</Title3>
     <div class="rental-card-desc">{description}</div>
     <div class="rental-card-action">
-      <Button variant="outline" color="primary">Read more</Button>
+      <a href="/rentals">
+        <Button variant="outline" color="primary"
+          >Our Rentals That Can Help</Button
+        >
+      </a>
     </div>
   </div>
 </div>

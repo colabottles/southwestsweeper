@@ -14,6 +14,6 @@ export const maintenanceSection = {
     "Industrial Grade Capability",
   ],
   visual: img,
-  callToAction: "Join Us in Building a Sustainable Future",
-  button: "Learn More",
+  callToAction: "How Southwest Sweeper Sales Can Help You",
+  button: "What We Can Do For You",
 };

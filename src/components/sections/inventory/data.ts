@@ -3,7 +3,7 @@ import img2 from "./assets/gx12.png";
 import img3 from "./assets/pb.png";
 
 export const inventorySection = {
-  title: "What We Carry",
+  title: "Inventory",
   subheading1_1: "Our Wide Selection",
   subheading1_2: " Of What We Carry In Our Inventory",
   inventory: [
