@@ -16,6 +16,7 @@ export interface InventoryItem {
   contentTypeId: "inventoryItem";
   fields: {
     name: EntryFieldTypes.Text;
+    slug: EntryFieldTypes.Text;
     category: EntryFieldTypes.Text;
     description: EntryFieldTypes.Text;
     pricePerDay: EntryFieldTypes.Number;
