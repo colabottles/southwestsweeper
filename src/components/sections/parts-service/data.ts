@@ -3,12 +3,18 @@ import imgKodiak from "./assets/kodiak.webp";
 import imgBucher from "./assets/bucher.webp";
 import imgSkavinjer from "./assets/skavinjer.webp";
 import imgRss from "./assets/rss.webp";
+import imgDept from "./assets/kodiak.webp"
 
 export const partsServiceSection = {
-  title: "Brands We Sell",
-  subheading1_1: "Discover Our Cutting-edge",
-  subheading1_2: " Maintenance Equipment Technologies",
+  title: "Parts & Service",
+  subheading1_1: "We stock a full range of sweeper parts for the machines we sell and service ",
+  subheading1_2: "Order for pickup. Supporting all major brands",
   partsService: [
+    {
+      title: "Our Parts and Service departments ",
+      description: "We maintain a full inventory to support the sweepers we sell and service. Customers can order parts for pickup or, in some cases, delivery. We carry parts for major brands including Allianz, Elgin, Tennant, Tymco, Schwarze, and many more.",
+      visual: imgKodiak,
+    },
     {
       title: "Victory Sweepers / Roots Multiclean",
       description:
@@ -41,6 +47,6 @@ export const partsServiceSection = {
     },
   ],
   visual: "innovations-section-image.jpg",
-  callToAction: "Explore the Future of Green Energy with [Company Name]",
+  callToAction: "Explore Southwest Sweeper Sales parts and service departments",
   button: "Learn More",
 };

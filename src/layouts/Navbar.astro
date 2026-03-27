@@ -3,12 +3,11 @@ import Navitem from "../components/shared/Navitem.astro";
 import BtnLink from "../components/shared/BtnLink.astro";
 import BtnThemeSwitch from "../components/shared/BtnThemeSwitch.astro";
 const navItems = [
-  { href: "#", text: "Home" },
-  { href: "#facility-services", text: "Facility Services" },
-  { href: "#parts-service", text: "Parts & Service" },
-  { href: "#maintenance", text: "Maintenance" },
-  { href: "#rentals", text: "Rentals" },
+  { href: "/", text: "Home" },
   { href: "#inventory", text: "Inventory" },
+  { href: "#parts-service", text: "Parts & Service" },
+  { href: "#rentals", text: "Rentals" },
+  { href: "#facility-services", text: "Facility Services" },
 ];
 ---
 
@@ -17,7 +16,7 @@ const navItems = [
     <div class="nav-logo">
       <a href="/"
         ><div class="nav-logo-img-wrap">
-          <img src="/images/swsweep.png" alt="Southwest Sweeper Sales logo" />
+          <img src="/images/sws_logo.png" alt="Southwest Sweeper Sales logo" />
         </div></a
       >
     </div>
