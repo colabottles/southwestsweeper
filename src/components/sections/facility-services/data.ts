@@ -1,7 +1,7 @@
 import img1 from "./assets/sweeper.png";
 import img2 from "./assets/street_sweeper.png";
 
-import img3 from "./assets/garsweep.png";
+import img3 from "./assets/parking.png";
 import img4 from "./assets/warehouse.png";
 
 import img5 from "./assets/porter.png";
@@ -11,7 +11,7 @@ import img7 from "./assets/window.png";
 import img8 from "./assets/suite.png";
 
 import img9 from "./assets/meter.png";
-import img10 from "./assets/haulaway.png";
+import img10 from "./assets/dumpster.png";
 
 export const servicesSectionData = {
   title: "Our Facility Services",
