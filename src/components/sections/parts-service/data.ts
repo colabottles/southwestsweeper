@@ -3,7 +3,7 @@ import imgKodiak from "./assets/kodiak.webp";
 import imgBucher from "./assets/bucher.webp";
 import imgSkavinjer from "./assets/skavinjer.webp";
 import imgRss from "./assets/rss.webp";
-import imgDept from "./assets/kodiak.webp"
+import imgDept from "./assets/parts.webp"
 
 export const partsServiceSection = {
   title: "Parts & Service",
@@ -13,7 +13,7 @@ export const partsServiceSection = {
     {
       title: "Our Parts and Service departments ",
       description: "We maintain a full inventory to support the sweepers we sell and service. Customers can order parts for pickup or, in some cases, delivery. We carry parts for major brands including Allianz, Elgin, Tennant, Tymco, Schwarze, and many more.",
-      visual: imgKodiak,
+      visual: imgDept,
     },
     {
       title: "Victory Sweepers / Roots Multiclean",
