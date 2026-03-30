@@ -2,7 +2,7 @@ import img1 from "./assets/sweeper.png";
 import img2 from "./assets/street_sweeper.png";
 
 import img3 from "./assets/garsweep.png";
-import img4 from "./assets/warsweep.png";
+import img4 from "./assets/warehouse.png";
 
 import img5 from "./assets/porter.png";
 import img6 from "./assets/pwash.png";
