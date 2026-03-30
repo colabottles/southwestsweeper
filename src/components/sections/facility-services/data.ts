@@ -10,7 +10,7 @@ import img6 from "./assets/pwash.png";
 import img7 from "./assets/window.png";
 import img8 from "./assets/suite.png";
 
-import img9 from "./assets/meter.png";
+import img9 from "./assets/electric_meter.png";
 import img10 from "./assets/dumpster.png";
 
 export const servicesSectionData = {
