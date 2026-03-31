@@ -10,12 +10,14 @@ const { name, visual } = Astro.props;
 <div class="inventory-card">
   <div class="inventory-card-inner">
     <div class="inventory-card-image">
-      <LazyImage
-        src={visual}
-        alt={name}
-        height={150}
-        class="inventory-card-img"
-      />
+      <a href="/rentals">
+        <LazyImage
+          src={visual}
+          alt={name}
+          height={150}
+          class="inventory-card-img"
+        />
+      </a>
     </div>
     <div class="inventory-card-label">
       <h5 class="inventory-card-name">{name}</h5>
