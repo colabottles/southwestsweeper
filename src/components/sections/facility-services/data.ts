@@ -23,13 +23,13 @@ export const servicesSectionData = {
   },
   services: [
     {
-      title: "Parking Lot Sweeping",
+      title: "Industrial Sweeping",
       briefDescription:
         "Maintain a pristine curb appeal and extend the lifespan of your pavement with our routine sweeping services. We efficiently remove trash, dirt, and abrasive debris that can degrade asphalt, ensuring a clean and welcoming environment for your customers and tenants.",
       visual: img1,
     },
     {
-      title: "Street Sweeping",
+      title: "Parking Lot & Street Sweeping",
       briefDescription:
         "Our heavy-duty street sweeping services ensure safe, debris-free roadways that comply with local environmental and storm water regulations. By preventing trash, sediment, and pollutants from entering storm drains, we help you maintain community standards and environmental responsibility.",
       visual: img2,
