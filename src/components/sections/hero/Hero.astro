@@ -7,14 +7,11 @@ import Title from "../../shared/Title.astro";
 import LazyImage from "../../shared/LazyImage.astro";
 const heroSection = {
   headline1: "Serving the",
-  headline2: "Arizona Valley,",
+  headline2: "Arizona Valley ",
   headline3: "Since ",
   headline4: "1975!",
-  subheading1:
-    "Our parts department stocks a complete inventory of parts and equipment",
-  subheading2: "Our service department has a full time staff of mechanics",
-  subheading3:
-    "Inventory is always revolving, please call to ask what we currently have in stock",
+  subheading1: "Inside, outside, everywhere you drive, ",
+  subheading2: "we've got you covered.",
   buttonText: "Contact Us Today!",
 };
 export interface Props {
@@ -36,9 +33,7 @@ const { className = "" } = Astro.props;
           >{heroSection.headline4}</Title
         >
         <SubTitle className="hero-subtitle"
-          >{heroSection.subheading1}<br />{heroSection.subheading2}<br />{
-            heroSection.subheading3
-          }</SubTitle
+          >{heroSection.subheading1}<br />{heroSection.subheading2}</SubTitle
         >
         <div class="hero-cta">
           <CtaButton>{heroSection.buttonText}</CtaButton>

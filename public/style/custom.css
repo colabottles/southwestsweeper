@@ -1157,7 +1157,7 @@ ul {
 
 .inventory-card-image {
   flex-shrink: 0;
-  height: 175px;
+  height: 225px;
   width: 383px;
   overflow: hidden;
 }
@@ -1165,7 +1165,7 @@ ul {
 .inventory-card-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .inventory-card-name {

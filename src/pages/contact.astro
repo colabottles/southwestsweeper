@@ -1,0 +1,28 @@
+---
+import { contentfulClient } from "../lib/contentful";
+import type { RentalItem } from "../types/contentful";
+import Layout from "../layouts/Layout.astro";
+
+const entries = await contentfulClient.getEntries<RentalItem>({
+  content_type: "rentalItem",
+  order: ["fields.sortOrder"] as any,
+});
+
+const items = entries.items.map((item) => item.fields);
+
+const grouped = items.reduce(
+  (acc, item) => {
+    if (!acc[item.category]) acc[item.category] = [];
+    acc[item.category].push(item);
+    return acc;
+  },
+  {} as Record<string, typeof items>,
+);
+---
+<Layout title="Contact Us">
+  <h1>Contact Us</h1>
+  <p>
+    For inquiries, please email us at
+    <a href="mailto:info@company.com">info@company.com</a>
+  </p>
+</Layout>
