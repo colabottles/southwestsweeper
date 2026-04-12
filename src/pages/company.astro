@@ -1,56 +1,71 @@
 ---
-import { contentfulClient } from "../lib/contentful";
-import type { RentalItem } from "../types/contentful";
 import Layout from "../layouts/Layout.astro";
-
-const entries = await contentfulClient.getEntries<RentalItem>({
-  content_type: "rentalItem",
-  order: ["fields.sortOrder"] as any,
-});
-
-const items = entries.items.map((item) => item.fields);
-
-const grouped = items.reduce(
-  (acc, item) => {
-    if (!acc[item.category]) acc[item.category] = [];
-    acc[item.category].push(item);
-    return acc;
-  },
-  {} as Record<string, typeof items>,
-);
 ---
 
 <Layout title="Company">
   <main class="site-main">
-    <h1>About Us</h1>
-    <p>
-      The story of Southwest Sweeper Sales begins with the immigration of
-      Dimitris Zannis from an island in the east Mediterranean of Greece, Xios.
-      This is where he built his foundation of life, family and work ethic. He
-      arrived in Arizona on February 22, 1975 with great expectations to become
-      successful.
-    </p>
-    <p>
-      Immediately after he arrived, the birth of Dimitris Service Company began
-      with a push broom and shovel in the parking lot at a shopping center. His
-      first business struggled as most first businesses do, however, Dimitris'
-      determination eventually led to the purchase of the first riding sweeper
-      in 1977.
-    </p>
-    <p>
-      The company incorporated in 1985 as Dimsco Inc and grew exponentially into
-      a multi-million dollar company with a large fleet of sweepers. Dimitris
-      decided to retire in April 2000 and sold Dimsco Inc. Not one to sit
-      around, Dimtris decided to find an alternative to contract sweeping -
-      selling sweepers.
-    </p>
-    <p>
-      Southwest Sweeper Sales was established in November 2000 more or less as
-      happenstance. What started out as a hobby grew into a successful business.
-      Today Southwest Sweeper Sales sells and supports six different product
-      lines nationally and internationally with a full-time sales staff,
-      maintains a full service shop on and off-site, has a comprehensive parts
-      department for all makes and models and is continuing to expand.
-    </p>
+    <div class="company-page">
+      <div class="container container--wide">
+        <div class="section-header">
+          <div class="title2"><h2>Our Story</h2></div>
+          <h1 class="title">About Us</h1>
+          <p class="subtitle">Serving the Arizona Valley since 1975.</p>
+        </div>
+
+        <div class="company-content">
+          <p>
+            The story of Southwest Sweeper Sales begins with the immigration of
+            Dimitris Zannis from an island in the east Mediterranean of Greece,
+            Xios. This is where he built his foundation of life, family and work
+            ethic. He arrived in Arizona on February 22, 1975 with great
+            expectations to become successful.
+          </p>
+          <p>
+            Immediately after he arrived, the birth of Dimitris Service Company
+            began with a push broom and shovel in the parking lot at a shopping
+            center. His first business struggled as most first businesses do,
+            however, Dimitris' determination eventually led to the purchase of
+            the first riding sweeper in 1977.
+          </p>
+          <p>
+            The company incorporated in 1985 as Dimsco Inc and grew
+            exponentially into a multi-million dollar company with a large fleet
+            of sweepers. Dimitris decided to retire in April 2000 and sold
+            Dimsco Inc. Not one to sit around, Dimtris decided to find an
+            alternative to contract sweeping - selling sweepers.
+          </p>
+          <p>
+            Southwest Sweeper Sales was established in November 2000 more or
+            less as happenstance. What started out as a hobby grew into a
+            successful business. Today Southwest Sweeper Sales sells and
+            supports six different product lines nationally and internationally
+            with a full-time sales staff, maintains a full service shop on and
+            off-site, has a comprehensive parts department for all makes and
+            models and is continuing to expand.
+          </p>
+        </div>
+      </div>
+    </div>
   </main>
 </Layout>
+
+<style>
+  .company-page {
+    padding-top: 8rem;
+    padding-bottom: 4rem;
+  }
+
+  .company-content {
+    max-width: 72ch;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .company-content p {
+    font-size: 1.0625rem;
+    line-height: 1.75;
+    color: var(--color-text);
+  }
+</style>

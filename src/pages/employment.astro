@@ -1,21 +1,58 @@
 ---
-import { contentfulClient } from "../lib/contentful";
-import type { RentalItem } from "../types/contentful";
 import Layout from "../layouts/Layout.astro";
-
-const entries = await contentfulClient.getEntries<RentalItem>({
-  content_type: "rentalItem",
-  order: ["fields.sortOrder"] as any,
-});
-
-const items = entries.items.map((item) => item.fields);
-
-const grouped = items.reduce(
-  (acc, item) => {
-    if (!acc[item.category]) acc[item.category] = [];
-    acc[item.category].push(item);
-    return acc;
-  },
-  {} as Record<string, typeof items>,
-);
 ---
+
+<Layout title="Employment">
+  <main class="site-main">
+    <div class="employment-page">
+      <div class="container container--wide">
+        <div class="section-header">
+          <div class="title2"><h2>Work With Us</h2></div>
+          <h1 class="title">Employment</h1>
+          <p class="subtitle">Join the Southwest Sweeper Sales team.</p>
+        </div>
+
+        <div class="employment-content">
+          <p>
+            Southwest Sweeper Sales is always looking for motivated,
+            hard-working individuals to join our growing team. We offer a
+            supportive work environment, competitive compensation, and the
+            opportunity to be part of a company with over 50 years of history
+            serving the Arizona Valley and beyond.
+          </p>
+          <p>
+            We have opportunities in sales, service, parts, and administration.
+            Whether you're an experienced technician or looking to start a
+            career in equipment sales, we'd love to hear from you.
+          </p>
+          <p>
+            To inquire about open positions, please contact us by phone or reach
+            out through our contact page. Include a brief description of your
+            background and the type of role you're interested in.
+          </p>
+        </div>
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .employment-page {
+    padding-top: 8rem;
+    padding-bottom: 4rem;
+  }
+
+  .employment-content {
+    max-width: 72ch;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .employment-content p {
+    font-size: 1.0625rem;
+    line-height: 1.75;
+    color: var(--color-text);
+  }
+</style>
