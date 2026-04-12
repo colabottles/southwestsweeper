@@ -2,27 +2,37 @@
 import Navitem from "../components/shared/Navitem.astro";
 import BtnLink from "../components/shared/BtnLink.astro";
 import BtnThemeSwitch from "../components/shared/BtnThemeSwitch.astro";
+
+const currentPath = Astro.url.pathname;
+const isHome = currentPath === "/";
+
 const navItems = [
-  { href: "/", text: "Home" },
-  { href: "#inventory", text: "Inventory" },
-  { href: "#parts-service", text: "Parts & Service" },
-  { href: "#rentals", text: "Rentals" },
-  { href: "#facility-services", text: "Facility Services" },
+  { href: isHome ? "#inventory" : "/inventory", text: "Inventory" },
+  {
+    href: isHome ? "#parts-service" : "/parts-service",
+    text: "Parts & Service",
+  },
+  { href: isHome ? "#rentals" : "/rentals", text: "Rentals" },
+  {
+    href: isHome ? "#facility-services" : "/facility-services",
+    text: "Facility Services",
+  },
 ];
 ---
 
 <header class="site-header">
   <nav class="site-nav">
     <div class="nav-logo">
-      <a href="/"
-        ><div class="nav-logo-img-wrap">
+      <a href="/">
+        <div class="nav-logo-img-wrap">
           <img src="/images/sws_logo.png" alt="Southwest Sweeper Sales logo" />
-        </div></a
-      >
+        </div>
+      </a>
     </div>
     <div data-nav-overlay aria-hidden="true" class="nav-overlay"></div>
     <div data-navbar class="nav-drawer">
       <ul class="nav-list">
+        <Navitem href="/" text="Home" />
         {navItems.map((item) => <Navitem href={item.href} text={item.text} />)}
       </ul>
       <div class="nav-cta-wrap">
