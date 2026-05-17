@@ -2,13 +2,7 @@
 export interface Props {
   className?: string;
 }
-
-const { className } = Astro.props;
+const { className = "" } = Astro.props;
 ---
 
-<p
-  class={`tracking-wide antialiased
-   mb-8 text-lg md:text-4xl font-extrabold  ${className}`}
->
-  <slot />
-</p>
+<p class={`subtitle2 ${className}`}><slot /></p>

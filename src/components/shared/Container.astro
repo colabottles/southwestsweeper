@@ -3,23 +3,15 @@ export interface Props {
   className?: string;
   size?: "full" | "wide" | "medium" | "narrow";
 }
-
-const { className, size = "wide" } = Astro.props;
-let widthClasses = "max-w-7xl";
-
-if (size === "full") {
-  widthClasses = "w-full";
-} else if (size === "wide") {
-  widthClasses = "max-w-7xl w-full";
-} else if (size === "medium") {
-  widthClasses = "max-w-5xl w-full";
-} else if (size === "narrow") {
-  widthClasses = "max-w-3xl w-full";
-}
+const { className = "", size = "wide" } = Astro.props;
+const sizeClass =
+  size === "full"
+    ? "container--full"
+    : size === "wide"
+      ? "container--wide"
+      : size === "medium"
+        ? "container--medium"
+        : "container--narrow";
 ---
 
-<div
-  class={`mx-auto px-5 sm:px-8 md:px-14 lg:px-5 ${className} ${widthClasses}`}
->
-  <slot />
-</div>
+<div class={`container ${sizeClass} ${className}`}><slot /></div>
