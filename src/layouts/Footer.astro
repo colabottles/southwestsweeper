@@ -3,25 +3,35 @@ import GroupFooterNav from "../components/blocks/GroupFooterNav.astro";
 import Container from "../components/shared/Container.astro";
 import FooterNav from "../components/shared/FooterNav.astro";
 import Paragraph from "../components/shared/Paragraph.astro";
+
+const currentPath = Astro.url.pathname;
+const isHome = currentPath === "/";
+
 const footerNav1 = [
-  { itemText: "Facility Services", itemLink: "#facility-services" },
-  { itemText: "Rentals", itemLink: "/rentals" },
-  { itemText: "Inventory", itemLink: "/inventory" },
+  {
+    itemText: "Facility Services",
+    itemLink: isHome ? "#facility-services" : "/facility-services",
+  },
+  { itemText: "Rentals", itemLink: isHome ? "#rentals" : "/rentals" },
+  { itemText: "Inventory", itemLink: isHome ? "#inventory" : "/inventory" },
 ];
 const footerSupport = [
-  { itemText: "Parts & Service", itemLink: "#parts-service" },
-  { itemText: "Sales", itemLink: "#" },
-  { itemText: "FAQ", itemLink: "#faq" },
-  { itemText: "Contact", itemLink: "#contact" },
+  {
+    itemText: "Parts & Service",
+    itemLink: isHome ? "#parts-service" : "/parts-service",
+  },
+  { itemText: "Sales", itemLink: isHome ? "#" : "/" },
+  { itemText: "FAQ", itemLink: "/faq" },
+  { itemText: "Contact", itemLink: "/contact" },
 ];
 const footerCompany = [
   { itemText: "Company", itemLink: "/company" },
-  { itemText: "Employment", itemLink: "#employment" },
+  { itemText: "Employment", itemLink: "/employment" },
 ];
 const footerLegal = [
-  { itemText: "Legal", itemLink: "#" },
-  { itemText: "Privacy", itemLink: "#" },
-  { itemText: "Terms", itemLink: "#" },
+  { itemText: "Legal", itemLink: "/legal" },
+  { itemText: "Privacy", itemLink: "/privacy" },
+  { itemText: "Terms", itemLink: "/terms" },
 ];
 ---
 
@@ -31,9 +41,9 @@ const footerLegal = [
       <div class="footer-grid">
         <div class="footer-brand">
           <div>
-            <a href="#"
-              ><span class="footer-brand-name">Southwest Sweeper Sales</span></a
-            >
+            <a href="/">
+              <span class="footer-brand-name">Southwest Sweeper Sales</span>
+            </a>
             <Paragraph className="mt-8"
               >Serving the Arizona Valley since 1975.</Paragraph
             >
@@ -58,7 +68,8 @@ const footerLegal = [
           </div>
           <div>
             Produced by <a href="https://toddl.dev" target="_blank"
-              >Todd Libby</a>
+              >Todd Libby</a
+            >
           </div>
         </div>
       </Container>
