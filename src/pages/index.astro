@@ -1,7 +1,5 @@
 ---
-import Maintenance from "../components/sections/maintenance/Maintenance.astro";
 import Rentals from "../components/sections/rentals/Rental.astro";
-import Employment from "../components/sections/employment/Employment.astro";
 import Hero from "../components/sections/hero/Hero.astro";
 import FacilityServices from "../components/sections/facility-services/FacilityServices.astro";
 import PartsService from "../components/sections/parts-service/PartsService.astro";
@@ -9,20 +7,12 @@ import Layout from "../layouts/Layout.astro";
 import InventorySection from "../components/sections/inventory/InventorySection.astro";
 ---
 
-<Layout title="Welcome to Southwest Sweeper Sales! ">
-  <main class="flex flex-col gap-y-20 md:gap-y-40 overflow-hidden">
+<Layout title="Welcome to Southwest Sweeper Sales!">
+  <main class="site-main">
     <Hero />
-
-    <FacilityServices />
-
-    <PartsService />
-
-    <Maintenance />
-
-    <Rentals />
-
     <InventorySection />
-
-    <Employment />
+    <PartsService />
+    <Rentals />
+    <FacilityServices />
   </main>
 </Layout>

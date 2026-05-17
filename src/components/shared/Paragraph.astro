@@ -2,10 +2,7 @@
 export interface Props {
   className?: string;
 }
-
-const { className } = Astro.props;
+const { className = "" } = Astro.props;
 ---
 
-<p class={`md:text-lg ${className}`}>
-  <slot />
-</p>
+<p class={`paragraph ${className}`}><slot /></p>
